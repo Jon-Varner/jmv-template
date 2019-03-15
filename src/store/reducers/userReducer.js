@@ -26,7 +26,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        user: action.payload.user,
+        user: action.payload,
         error: null
       };
 

@@ -1,5 +1,5 @@
-import * as actionTypes from '../actions/types';
 import axios from 'axios';
+import * as actionTypes from './types';
 
 export const testDispatch = payload => ({
   type: actionTypes.TEST_DISPATCH,
@@ -27,7 +27,7 @@ const fetchUserBegin = () => ({
 
 const fetchUserSuccess = user => ({
   type: actionTypes.FETCH_USER_SUCCESS,
-  payload: user
+  payload: { ...user }
 });
 
 const fetchUserFailure = error => ({

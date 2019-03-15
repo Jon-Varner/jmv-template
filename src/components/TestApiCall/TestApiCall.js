@@ -14,7 +14,7 @@ class TestApiCall extends Component {
     let id = 0;
     let name = 'Unavailable';
 
-    if (user.hasOwnProperty(id)) {
+    if (user.hasOwnProperty('id')) {
       id = user.id;
       name = user.name;
     }

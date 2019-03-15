@@ -6,7 +6,7 @@ import Aux from '../../hoc/Auxiliary';
 
 const testForm = props => (
   <Aux>
-    <label htmlFor="testData" />
+    <p>{props.testData}</p>
     <input
       value={props.testData}
       id={uuid.v4()}

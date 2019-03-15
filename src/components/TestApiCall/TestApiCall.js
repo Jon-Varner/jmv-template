@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 class TestApiCall extends Component {
   componentDidMount() {
-    /* 
-    NOTE: API calls will not work from localhost
-    */
     this.props.userFetched();
   }
 

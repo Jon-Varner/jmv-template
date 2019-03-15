@@ -16,7 +16,7 @@
 
 <p>A typical component folder structure is included, as well as a Layout container and Header, Nav, Footer, TestForm, and TestApiCall components. Routing is set up to include a 404 error page.</p>
 
-<p>I set up the redux store with separate action and types files, as well as a rootReducer using combineReducers and simple proof-of-concept actions and reducers. The Test Form page simply demonstrates that Redux is working properly with react-router. The Test API Call page demonstrates an asynchronous API call using thunk and axios. (Note that API calls will not work from localhost.)</p>
+<p>I set up the redux store with separate action and types files, as well as a rootReducer using combineReducers and simple proof-of-concept actions and reducers. The Test Form page simply demonstrates that Redux is working properly with react-router. The Test API Call page demonstrates an asynchronous API call using thunk and axios.</p>
 
 <p>uuid is included because JSX element ids need to be unique.</p>
 

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import testDispatchReducer from './testDispatchReducer';
+import sampleDispatchReducer from './sampleDispatchReducer';
 import userReducer from './userReducer';
 
 export default combineReducers({
-  testDispatch: testDispatchReducer,
+  sampleDispatch: sampleDispatchReducer,
   user: userReducer
 });

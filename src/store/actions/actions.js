@@ -1,8 +1,8 @@
 import axios from 'axios';
 import * as actionTypes from './types';
 
-export const testDispatch = payload => ({
-  type: actionTypes.TEST_DISPATCH,
+export const sampleDispatch = payload => ({
+  type: actionTypes.SAMPLE_DISPATCH,
   payload: payload
 });
 

@@ -7,15 +7,15 @@ import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Nav from '../../components/Nav/Nav';
 import Home from '../../components/Home/Home';
-import TestForm from '../../components/TestForm/TestForm';
-import TestApiCall from '../../components/TestApiCall/TestApiCall';
+import SampleForm from '../../components/SampleForm/SampleForm';
+import SampleApiCall from '../../components/SampleApiCall/SampleApiCall';
 import Error404 from '../../components/Error/Error404';
 
 import * as actions from '../../store/actions/actions';
 
 class Layout extends Component {
-  onTestDispatched = data => {
-    this.props.testDispatch(data);
+  onSampleDispatched = data => {
+    this.props.sampleDispatch(data);
   };
 
   onUserFetched = () => {
@@ -31,19 +31,19 @@ class Layout extends Component {
           <Switch>
             <Route
               exact
-              path="/test-form"
+              path="/sample-form"
               render={props => (
-                <TestForm
-                  testData={this.props.testData}
-                  dispatchedTest={this.onTestDispatched}
+                <SampleForm
+                  sampleData={this.props.sampleData}
+                  dispatchedSample={this.onSampleDispatched}
                 />
               )}
             />
             <Route
               exact
-              path="/test-api-call"
+              path="/sample-api-call"
               render={props => (
-                <TestApiCall
+                <SampleApiCall
                   user={this.props.user}
                   userFetched={this.onUserFetched}
                 />
@@ -61,14 +61,14 @@ class Layout extends Component {
 
 const mapStateToProps = state => {
   return {
-    testData: state.testDispatch.testData,
+    sampleData: state.sampleDispatch.sampleData,
     user: state.user.user
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    testDispatch: data => dispatch(actions.testDispatch(data)),
+    sampleDispatch: data => dispatch(actions.sampleDispatch(data)),
     fetchUser: () => dispatch(actions.fetchUser())
   };
 };

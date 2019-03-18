@@ -10,13 +10,13 @@ const nav = props => (
         </NavLink>
       </li>
       <li>
-        <NavLink exact to="/test-form">
-          Test Form
+        <NavLink exact to="/sample-form">
+          Sample Form
         </NavLink>
       </li>
       <li>
-        <NavLink exact to="/test-api-call">
-          Test API Call
+        <NavLink exact to="/sample-api-call">
+          Sample API Call
         </NavLink>
       </li>
     </ul>

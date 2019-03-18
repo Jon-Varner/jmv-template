@@ -12,11 +12,14 @@
   <li>axios</li>
   <li>uuid</li>
   <li>node-sass</li>
+  <li>dev dependencies: enzyme, redux-mock-store, and axios-mock-adapter</li>
 </ul>
 
-<p>A typical component folder structure is included, as well as a Layout container and Header, Nav, Footer, TestForm, and TestApiCall components. Routing is set up to include a 404 error page.</p>
+<p>A typical component folder structure is included, as well as a Layout container and Header, Nav, Footer, SampleForm, and SampleApiCall components. Routing is set up to include a 404 error page.</p>
 
-<p>I set up the redux store with separate action and types files, as well as a rootReducer using combineReducers and simple proof-of-concept actions and reducers. The Test Form page simply demonstrates that Redux is working properly with react-router. The Test API Call page demonstrates an asynchronous API call using thunk and axios.</p>
+<p>I set up the redux store with separate action and types files, as well as a rootReducer using combineReducers and simple proof-of-concept actions and reducers. The Sample Form page simply demonstrates that Redux is working properly with react-router. The Sample API Call page demonstrates an asynchronous API call using thunk and axios.</p>
+
+<p>Unit tests are included for Redux actions and reducers.</p>
 
 <p>uuid is included because JSX element ids need to be unique.</p>
 

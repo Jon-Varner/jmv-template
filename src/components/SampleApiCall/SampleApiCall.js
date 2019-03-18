@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class TestApiCall extends Component {
+class SampleApiCall extends Component {
   componentDidMount() {
     this.props.userFetched();
   }
@@ -24,9 +24,9 @@ class TestApiCall extends Component {
   }
 }
 
-TestApiCall.propTypes = {
+SampleApiCall.propTypes = {
   user: PropTypes.object,
   userFetched: PropTypes.func.isRequired
 };
 
-export default TestApiCall;
+export default SampleApiCall;

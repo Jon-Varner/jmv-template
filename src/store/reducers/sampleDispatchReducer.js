@@ -1,15 +1,15 @@
-import { TEST_DISPATCH } from '../actions/types';
+import { SAMPLE_DISPATCH } from '../actions/types';
 
 const initialState = {
-  testData: 'update me!'
+  sampleData: 'update me!'
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case TEST_DISPATCH:
+    case SAMPLE_DISPATCH:
       return {
         ...state,
-        testData: action.payload
+        sampleData: action.payload
       };
     default:
       return state;

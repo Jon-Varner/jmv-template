@@ -11,7 +11,7 @@ class SampleApiCall extends Component {
     let id = 0;
     let name = 'Unavailable';
 
-    if (user.hasOwnProperty('id')) {
+    if (user.id) {
       id = user.id;
       name = user.name;
     }

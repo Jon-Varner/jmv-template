@@ -11,7 +11,7 @@ class SampleApiCall extends Component {
     let id = 0;
     let name = 'Unavailable';
 
-    if (user.id) {
+    if (user && user.id && user.name) {
       id = user.id;
       name = user.name;
     }

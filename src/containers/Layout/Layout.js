@@ -13,7 +13,7 @@ import Error404 from '../../components/Error/Error404';
 
 import * as actions from '../../store/actions/actions';
 
-class Layout extends Component {
+export class Layout extends Component {
   onSampleDispatched = data => {
     this.props.sampleDispatch(data);
   };
@@ -32,7 +32,7 @@ class Layout extends Component {
             <Route
               exact
               path="/sample-form"
-              render={props => (
+              render={() => (
                 <SampleForm
                   sampleData={this.props.sampleData}
                   dispatchedSample={this.onSampleDispatched}
@@ -42,7 +42,7 @@ class Layout extends Component {
             <Route
               exact
               path="/sample-api-call"
-              render={props => (
+              render={() => (
                 <SampleApiCall
                   user={this.props.user}
                   userFetched={this.onUserFetched}

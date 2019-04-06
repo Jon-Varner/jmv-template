@@ -1,0 +1,19 @@
+$max-width: 1280px;
+
+main {
+  max-width: $max-width;
+  margin: 1rem;
+  padding: 1rem;
+
+  @include breakpoint(md) {
+    border: 1px solid $light-gray;
+  }
+
+  @include breakpoint(xl) {
+    margin: 1rem auto;
+  }
+
+  article {
+    text-align: left;
+  }
+}

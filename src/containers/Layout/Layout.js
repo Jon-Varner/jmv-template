@@ -22,11 +22,16 @@ export class Layout extends Component {
     this.props.fetchUser();
   };
 
+  onMenuToggled = () => {
+    console.log('Change from ' + this.props.menuOpen);
+    this.props.toggleMenu();
+  };
+
   render() {
     return (
       <Aux>
         <Header />
-        <Nav />
+        <Nav menuOpen={this.props.menuOpen} toggleMenu={this.onMenuToggled} />
         <main>
           <Switch>
             <Route
@@ -61,6 +66,7 @@ export class Layout extends Component {
 
 const mapStateToProps = state => {
   return {
+    menuOpen: state.menuToggle.menuOpen,
     sampleData: state.sampleDispatch.sampleData,
     user: state.user.user
   };
@@ -68,6 +74,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    toggleMenu: () => dispatch(actions.toggleMenu()),
     sampleDispatch: data => dispatch(actions.sampleDispatch(data)),
     fetchUser: () => dispatch(actions.fetchUser())
   };

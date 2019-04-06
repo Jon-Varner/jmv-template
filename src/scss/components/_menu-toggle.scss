@@ -1,0 +1,50 @@
+.menu-toggle {
+  display: inline-block;
+  width: 40px;
+  height: 32px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+
+  .menu-hamburger {
+    display: block;
+    width: 40px;
+    height: 4px;
+    margin-top: 0;
+    transition-timing-function: ease;
+    transition-duration: 0.15s;
+    transition-property: transform, opacity;
+    border-radius: 4px;
+    background-color: $dark-gray;
+  }
+
+  .menu-hamburger:first-child {
+    margin-bottom: 4px;
+  }
+
+  .menu-hamburger:last-child {
+    margin-top: 4px;
+  }
+
+  &.is-open {
+    .menu-hamburger:first-child {
+      margin-bottom: -4px;
+      transform: rotate(45deg);
+    }
+    .menu-hamburger:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-hamburger:last-child {
+      margin-top: -4px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include breakpoint(md) {
+    display: none;
+  }
+}

@@ -1,0 +1,36 @@
+nav {
+  padding: 1rem;
+  background-color: $light-gray;
+
+  &.is-open {
+    ul {
+      display: block;
+    }
+
+    @include breakpoint(md) {
+      ul {
+        display: flex;
+      }
+    }
+  }
+
+  ul {
+    display: none;
+    width: 100%;
+    list-style: none;
+
+    @include breakpoint(md) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    li {
+      margin-top: 0;
+
+      a.active {
+        font-weight: bold;
+      }
+    }
+  }
+}

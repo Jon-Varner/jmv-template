@@ -1,0 +1,21 @@
+footer {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  ul {
+    width: 100%;
+    list-style: none;
+
+    &:last-child {
+      text-align: right;
+    }
+
+    li {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,6 +1,10 @@
 import axios from 'axios';
 import * as actionTypes from './types';
 
+export const toggleMenu = () => ({
+  type: actionTypes.TOGGLE_MENU
+});
+
 export const sampleDispatch = payload => ({
   type: actionTypes.SAMPLE_DISPATCH,
   payload: payload

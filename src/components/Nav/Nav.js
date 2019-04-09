@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import MenuToggle from './MenuToggle';
@@ -25,5 +26,10 @@ const nav = props => (
     </ul>
   </nav>
 );
+
+nav.propTypes = {
+  menuOpen: PropTypes.bool,
+  toggleMenu: PropTypes.func
+};
 
 export default nav;

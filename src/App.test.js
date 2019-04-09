@@ -10,6 +10,9 @@ const mockStore = configureStore(middleware);
 
 it('renders without crashing', () => {
   const initialState = {
+    menuToggle: {
+      menuOpen: false
+    },
     sampleDispatch: {
       sampleData: 'update me!'
     },

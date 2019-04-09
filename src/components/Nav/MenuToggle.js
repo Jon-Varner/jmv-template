@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const menuToggle = props => (
   <button
@@ -11,5 +12,10 @@ const menuToggle = props => (
     <span className="menu-hamburger" aria-hidden="true" />
   </button>
 );
+
+menuToggle.propTypes = {
+  menuOpen: PropTypes.bool,
+  toggleMenu: PropTypes.func
+};
 
 export default menuToggle;

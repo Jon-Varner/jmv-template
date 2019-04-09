@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 
 import MenuToggle from './MenuToggle';
 
-const nav = props => (
-  <nav className={props.menuOpen ? 'is-open' : ''}>
-    <MenuToggle menuOpen={props.menuOpen} toggleMenu={props.toggleMenu} />
+const nav = ({ menuOpen, toggleMenu }) => (
+  <nav className={menuOpen ? 'is-open' : ''}>
+    <MenuToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
     <ul>
       <li>
         <NavLink exact to="/">

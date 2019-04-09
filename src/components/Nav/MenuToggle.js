@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const menuToggle = props => (
+const menuToggle = ({ menuOpen, toggleMenu }) => (
   <button
-    className={props.menuOpen ? 'menu-toggle is-open' : 'menu-toggle'}
+    className={menuOpen ? 'menu-toggle is-open' : 'menu-toggle'}
     aria-label="Open the menu"
-    onClick={props.toggleMenu}
+    onClick={toggleMenu}
   >
     <span className="menu-hamburger" aria-hidden="true" />
     <span className="menu-hamburger" aria-hidden="true" />

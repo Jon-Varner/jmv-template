@@ -4,13 +4,13 @@ import uuid from 'uuid';
 
 import Aux from '../../hoc/Auxiliary';
 
-const sampleForm = props => (
+const sampleForm = ({ sampleData, dispatchedSample }) => (
   <Aux>
-    <p className="displayStateData">{props.sampleData}</p>
+    <p className="displayStateData">{sampleData}</p>
     <input
-      value={props.sampleData}
+      value={sampleData}
       id={uuid.v4()}
-      onChange={e => props.dispatchedSample(e.target.value)}
+      onChange={e => dispatchedSample(e.target.value)}
     />
   </Aux>
 );

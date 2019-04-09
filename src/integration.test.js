@@ -73,7 +73,7 @@ describe('integration tests', () => {
   });
 
   /* sample API call */
-  it('renders initial state of user data', async () => {
+  it('renders user data for no api result', async () => {
     const wrapper = mount(
       <MemoryRouter initialEntries={['/sample-api-call']}>
         <App />

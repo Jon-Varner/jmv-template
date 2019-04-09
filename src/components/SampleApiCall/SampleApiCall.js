@@ -17,7 +17,7 @@ class SampleApiCall extends Component {
     }
 
     return (
-      <p>
+      <p className="api-result">
         API returned User ID: {id} and Name: {name}.
       </p>
     );

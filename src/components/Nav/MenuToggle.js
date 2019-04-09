@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const menuToggle = ({ menuOpen, toggleMenu }) => (
   <button
-    className={menuOpen ? 'menu-toggle is-open' : 'menu-toggle'}
+    className="menu-toggle"
     aria-label="Open the menu"
     onClick={toggleMenu}
   >

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import MenuToggle from './MenuToggle';
 
 const nav = ({ menuOpen, toggleMenu }) => (
-  <nav className={menuOpen ? 'is-open' : ''}>
+  <nav className={menuOpen ? 'primary-nav is-open' : 'primary-nav'}>
     <MenuToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
     <ul>
       <li>

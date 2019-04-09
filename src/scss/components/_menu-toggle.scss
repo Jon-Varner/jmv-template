@@ -29,21 +29,21 @@
     margin-top: 0.25rem;
   }
 
-  &.is-open {
-    .menu-hamburger:first-child {
-      margin-bottom: -0.25rem;
-      transform: rotate(45deg);
-    }
-    .menu-hamburger:nth-child(2) {
-      opacity: 0;
-    }
-    .menu-hamburger:last-child {
-      margin-top: -0.25rem;
-      transform: rotate(-45deg);
-    }
-  }
-
   @include breakpoint(md) {
     display: none;
+  }
+}
+
+.is-open .menu-toggle {
+  .menu-hamburger:first-child {
+    margin-bottom: -0.25rem;
+    transform: rotate(45deg);
+  }
+  .menu-hamburger:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-hamburger:last-child {
+    margin-top: -0.25rem;
+    transform: rotate(-45deg);
   }
 }

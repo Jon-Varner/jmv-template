@@ -6,8 +6,9 @@ import Aux from '../../hoc/Auxiliary';
 
 const sampleForm = ({ sampleData, dispatchedSample }) => (
   <Aux>
-    <p className="displayStateData">{sampleData}</p>
+    <p className="returned-sample-state">{sampleData}</p>
     <input
+      className="sample-dispatch"
       value={sampleData}
       id={uuid.v4()}
       onChange={e => dispatchedSample(e.target.value)}

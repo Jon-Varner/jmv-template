@@ -4,7 +4,7 @@ import uuid from 'uuid';
 
 import Aux from '../../hoc/Auxiliary';
 
-const sampleForm = ({ sampleData, dispatchedSample }) => (
+const SampleForm = ({ sampleData, dispatchedSample }) => (
   <Aux>
     <p className="returned-sample-state">{sampleData}</p>
     <input
@@ -16,9 +16,9 @@ const sampleForm = ({ sampleData, dispatchedSample }) => (
   </Aux>
 );
 
-sampleForm.propTypes = {
+SampleForm.propTypes = {
   sampleData: PropTypes.string,
   dispatchedSample: PropTypes.func.isRequired
 };
 
-export default sampleForm;
+export default SampleForm;

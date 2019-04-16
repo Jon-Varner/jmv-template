@@ -1,6 +1,6 @@
 import React from 'react';
 
-const home = props => (
+const Home = () => (
   <article className="home">
     <h2>This template includes the following:</h2>
     <ul>
@@ -19,4 +19,4 @@ const home = props => (
   </article>
 );
 
-export default home;
+export default Home;

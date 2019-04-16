@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-class SampleApiCall extends Component {
-  componentDidMount() {
-    this.props.userFetched();
+const SampleApiCall = props => {
+  const user = props.user;
+  let id = 0;
+  let name = 'Unavailable';
+
+  if (user && user.id && user.name) {
+    id = user.id;
+    name = user.name;
   }
 
-  render() {
-    const user = this.props.user;
-    let id = 0;
-    let name = 'Unavailable';
+  useEffect(() => {
+    props.userFetched();
+  }, []);
 
-    if (user && user.id && user.name) {
-      id = user.id;
-      name = user.name;
-    }
-
-    return (
-      <p className="api-result">
-        API returned User ID: {id} and Name: {name}.
-      </p>
-    );
-  }
-}
+  return (
+    <p className="api-result">
+      API returned User ID: {id} and Name: {name}.
+    </p>
+  );
+};
 
 SampleApiCall.propTypes = {
   user: PropTypes.object,

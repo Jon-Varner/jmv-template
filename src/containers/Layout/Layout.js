@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
@@ -13,56 +13,57 @@ import Error404 from '../../components/Error/Error404';
 
 import * as actions from '../../store/actions/actions';
 
-export class Layout extends Component {
-  onSampleDispatched = data => {
-    this.props.sampleDispatch(data);
+const Layout = ({
+  menuOpen,
+  sampleData,
+  user,
+  toggleMenu,
+  sampleDispatch,
+  fetchUser
+}) => {
+  const onSampleDispatched = data => {
+    sampleDispatch(data);
   };
 
-  onUserFetched = () => {
-    this.props.fetchUser();
+  const onUserFetched = () => {
+    fetchUser();
   };
 
-  onMenuToggled = () => {
-    console.log('Change from ' + this.props.menuOpen);
-    this.props.toggleMenu();
+  const onMenuToggled = () => {
+    toggleMenu();
   };
 
-  render() {
-    return (
-      <Aux>
-        <Header />
-        <Nav menuOpen={this.props.menuOpen} toggleMenu={this.onMenuToggled} />
-        <main>
-          <Switch>
-            <Route
-              exact
-              path="/sample-form"
-              render={() => (
-                <SampleForm
-                  sampleData={this.props.sampleData}
-                  dispatchedSample={this.onSampleDispatched}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/sample-api-call"
-              render={() => (
-                <SampleApiCall
-                  user={this.props.user}
-                  userFetched={this.onUserFetched}
-                />
-              )}
-            />
-            <Route exact path="/" component={Home} />
-            <Route component={Error404} />
-          </Switch>
-        </main>
-        <Footer />
-      </Aux>
-    );
-  }
-}
+  return (
+    <Aux>
+      <Header />
+      <Nav menuOpen={menuOpen} toggleMenu={onMenuToggled} />
+      <main>
+        <Switch>
+          <Route
+            exact
+            path="/sample-form"
+            render={() => (
+              <SampleForm
+                sampleData={sampleData}
+                dispatchedSample={onSampleDispatched}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/sample-api-call"
+            render={() => (
+              <SampleApiCall user={user} userFetched={onUserFetched} />
+            )}
+          />
+          <Route exact path="/" component={Home} />
+          <Route component={Error404} />
+        </Switch>
+      </main>
+      <Footer />
+    </Aux>
+  );
+};
 
 const mapStateToProps = state => {
   return {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const menuToggle = ({ menuOpen, toggleMenu }) => (
+const MenuToggle = ({ toggleMenu }) => (
   <button
     className="menu-toggle"
     aria-label="Open the menu"
@@ -13,9 +13,9 @@ const menuToggle = ({ menuOpen, toggleMenu }) => (
   </button>
 );
 
-menuToggle.propTypes = {
+MenuToggle.propTypes = {
   menuOpen: PropTypes.bool,
   toggleMenu: PropTypes.func
 };
 
-export default menuToggle;
+export default MenuToggle;

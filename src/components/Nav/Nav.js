@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import MenuToggle from './MenuToggle';
 
-const nav = ({ menuOpen, toggleMenu }) => (
+const Nav = ({ menuOpen, toggleMenu }) => (
   <nav className={menuOpen ? 'primary-nav is-open' : 'primary-nav'}>
     <MenuToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
     <ul>
@@ -27,9 +27,9 @@ const nav = ({ menuOpen, toggleMenu }) => (
   </nav>
 );
 
-nav.propTypes = {
+Nav.propTypes = {
   menuOpen: PropTypes.bool,
   toggleMenu: PropTypes.func
 };
 
-export default nav;
+export default Nav;

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const header = props => (
+const Header = () => (
   <header>
     <h1>Custom React template</h1>
   </header>
 );
 
-export default header;
+export default Header;

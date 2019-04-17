@@ -6,7 +6,7 @@ import MenuToggle from './MenuToggle';
 
 const Nav = ({ menuOpen, toggleMenu }) => (
   <nav className={menuOpen ? 'primary-nav is-open' : 'primary-nav'}>
-    <MenuToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
+    <MenuToggle toggleMenu={toggleMenu} />
     <ul>
       <li>
         <NavLink exact to="/">

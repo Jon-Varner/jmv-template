@@ -14,7 +14,6 @@ const MenuToggle = ({ toggleMenu }) => (
 );
 
 MenuToggle.propTypes = {
-  menuOpen: PropTypes.bool,
   toggleMenu: PropTypes.func
 };
 

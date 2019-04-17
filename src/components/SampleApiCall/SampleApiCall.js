@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const SampleApiCall = props => {
-  const user = props.user;
+const SampleApiCall = ({ user, userFetched }) => {
   let id = 0;
   let name = 'Unavailable';
 
@@ -12,7 +11,7 @@ const SampleApiCall = props => {
   }
 
   useEffect(() => {
-    props.userFetched();
+    userFetched();
   }, []);
 
   return (

@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 
-import Aux from '../../hoc/Auxiliary';
-
 const SampleForm = ({ sampleData, dispatchedSample }) => (
-  <Aux>
+  <Fragment>
     <p className="returned-sample-state">{sampleData}</p>
     <input
       className="sample-dispatch"
@@ -13,7 +11,7 @@ const SampleForm = ({ sampleData, dispatchedSample }) => (
       id={uuid.v4()}
       onChange={e => dispatchedSample(e.target.value)}
     />
-  </Aux>
+  </Fragment>
 );
 
 SampleForm.propTypes = {

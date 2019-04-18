@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
-import Aux from '../../hoc/Auxiliary';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import Nav from '../../components/Nav/Nav';
@@ -34,7 +33,7 @@ const Layout = ({
   };
 
   return (
-    <Aux>
+    <Fragment>
       <Header />
       <Nav menuOpen={menuOpen} toggleMenu={onMenuToggled} />
       <main>
@@ -61,7 +60,7 @@ const Layout = ({
         </Switch>
       </main>
       <Footer />
-    </Aux>
+    </Fragment>
   );
 };
 

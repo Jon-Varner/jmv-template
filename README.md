@@ -19,8 +19,6 @@
 
 <p>I set up the redux store with separate action and types files, as well as a rootReducer using combineReducers and simple proof-of-concept actions and reducers. The Sample Form page simply demonstrates that Redux is working properly with react-router. The Sample API Call page demonstrates an asynchronous API call using thunk and axios.</p>
 
-<p>Unit tests are included for components, Redux actions and reducers.</p>
+<p>Unit and integration tests are included as a starting point.</p>
 
 <p>uuid is included because JSX element ids need to be unique.</p>
-
-<p>I also included an Auxiliary higher order component so I don't have to put extra useless divs around every component.</p>

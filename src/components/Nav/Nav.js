@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-import MenuToggle from './MenuToggle';
+import MenuToggle from '../UI/MenuToggle';
 
 const Nav = ({ menuOpen, toggleMenu }) => (
   <nav className={menuOpen ? 'primary-nav is-open' : 'primary-nav'}>

@@ -2,12 +2,16 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 
+import FormField from '../UI/FormField';
+
 const SampleForm = ({ sampleData, dispatchedSample }) => (
   <Fragment>
     <p className="returned-sample-state">{sampleData}</p>
-    <input
+    <FormField
+      type="text"
+      label="Change this text:"
       className="sample-dispatch"
-      value={sampleData}
+      placeholder="update me!"
       id={uuid.v4()}
       onChange={e => dispatchedSample(e.target.value)}
     />

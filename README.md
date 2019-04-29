@@ -1,6 +1,6 @@
 <h1>Jon Varner's custom template</h1>
 
-<p>I put this together so I can quickly spin up a new React Web project with redux, react-router, and axios ready to go, as well as a very basic website layout. Bootstrap is not included and styling is minimal.</p>
+<p>I put this together so I can quickly spin up a new React Web project with redux, react-router, axios, yup, and sass ready to go, as well as a very basic website layout. Bootstrap is not included and styling is minimal.</p>
 
 <p>Just clone this project, rename your folder, then run <code>npm install</code>.
 
@@ -10,15 +10,18 @@
   <li>redux, react-redux, redux-thunk, and redux-devtools-extension</li>
   <li>react-router-dom</li>
   <li>axios</li>
-  <li>uuid</li>
+  <li>yup</li>  
   <li>node-sass</li>
+  <li>uuid</li>
   <li>dev dependencies: enzyme, redux-mock-store, and axios-mock-adapter</li>
 </ul>
 
 <p>A typical component folder structure is included, as well as a Layout container and Header, Nav, Footer, SampleForm, and SampleApiCall components. Routing is set up to include a 404 error page.</p>
 
-<p>I set up the redux store with separate action and types files, as well as a rootReducer using combineReducers and simple proof-of-concept actions and reducers. The Sample Form page simply demonstrates that Redux is working properly with react-router. The Sample API Call page demonstrates an asynchronous API call using thunk and axios.</p>
+<p>I set up the redux store with separate action and types files, as well as a rootReducer using combineReducers and simple proof-of-concept actions and reducers.</p>
 
-<p>Unit and integration tests are included as a starting point.</p>
+ <p>The Sample Form page includes dynamically generated fields using a single FormField component and validation using yup.</p>
 
-<p>uuid is included because JSX element ids need to be unique.</p>
+<p>The Sample API Call page demonstrates an asynchronous API call using thunk and axios.</p>
+
+<p>uuid is included for generating unique IDs.</p>

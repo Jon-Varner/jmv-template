@@ -14,18 +14,18 @@ import * as actions from '../../store/actions/actions';
 
 const Layout = ({
   menuOpen,
-  sampleData,
+  person,
   user,
   toggleMenu,
-  sampleDispatch,
-  fetchUser
+  fetchPerson,
+  addUser
 }) => {
-  const onSampleDispatched = data => {
-    sampleDispatch(data);
+  const onFormSubmitted = data => {
+    addUser(data);
   };
 
-  const onUserFetched = () => {
-    fetchUser();
+  const onPersonFetched = () => {
+    fetchPerson();
   };
 
   const onMenuToggled = () => {
@@ -42,17 +42,14 @@ const Layout = ({
             exact
             path="/sample-form"
             render={() => (
-              <SampleForm
-                sampleData={sampleData}
-                dispatchedSample={onSampleDispatched}
-              />
+              <SampleForm user={user} submitForm={onFormSubmitted} />
             )}
           />
           <Route
             exact
             path="/sample-api-call"
             render={() => (
-              <SampleApiCall user={user} userFetched={onUserFetched} />
+              <SampleApiCall person={person} personFetched={onPersonFetched} />
             )}
           />
           <Route exact path="/" component={Home} />
@@ -67,7 +64,7 @@ const Layout = ({
 const mapStateToProps = state => {
   return {
     menuOpen: state.menuToggle.menuOpen,
-    sampleData: state.sampleDispatch.sampleData,
+    person: state.sampleApiCall.person,
     user: state.user.user
   };
 };
@@ -75,8 +72,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     toggleMenu: () => dispatch(actions.toggleMenu()),
-    sampleDispatch: data => dispatch(actions.sampleDispatch(data)),
-    fetchUser: () => dispatch(actions.fetchUser())
+    fetchPerson: () => dispatch(actions.fetchPerson()),
+    addUser: payload => dispatch(actions.addUser(payload))
   };
 };
 

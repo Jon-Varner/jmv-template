@@ -5,41 +5,41 @@ export const toggleMenu = () => ({
   type: actionTypes.TOGGLE_MENU
 });
 
-export const sampleDispatch = payload => ({
-  type: actionTypes.SAMPLE_DISPATCH,
+export const addUser = payload => ({
+  type: actionTypes.ADD_USER,
   payload: payload
 });
 
-export const fetchUser = () => {
+export const fetchPerson = () => {
   return dispatch => {
-    dispatch(fetchUserBegin());
+    dispatch(fetchPersonBegin());
 
     axios
       .get('https://jsonplaceholder.typicode.com/users/1')
       .then(response => {
         dispatch(
-          fetchUserSuccess({
+          fetchPersonSuccess({
             id: response.data.id,
             name: response.data.username
           })
         );
       })
       .catch(error => {
-        dispatch(fetchUserFailure(error.message));
+        dispatch(fetchPersonFailure(error.message));
       });
   };
 };
 
-const fetchUserBegin = () => ({
-  type: actionTypes.FETCH_USER_BEGIN
+const fetchPersonBegin = () => ({
+  type: actionTypes.FETCH_PERSON_BEGIN
 });
 
-const fetchUserSuccess = user => ({
-  type: actionTypes.FETCH_USER_SUCCESS,
+const fetchPersonSuccess = user => ({
+  type: actionTypes.FETCH_PERSON_SUCCESS,
   payload: { ...user }
 });
 
-const fetchUserFailure = error => ({
-  type: actionTypes.FETCH_USER_FAILURE,
+const fetchPersonFailure = error => ({
+  type: actionTypes.FETCH_PERSON_FAILURE,
   payload: { error }
 });

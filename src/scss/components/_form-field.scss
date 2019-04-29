@@ -1,12 +1,44 @@
 .form-field {
   display: block;
 
-  label {
+  input,
+  select {
     display: block;
-  }
-
-  input {
     margin-top: 0.25em;
     padding: 0.25em;
+  }
+
+  label {
+    display: block;
+
+    .required {
+      color: $red;
+    }
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    display: inline-block;
+  }
+
+  input[type='checkbox'] + label,
+  input[type='radio'] + label {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 0.5rem;
+  }
+
+  ul {
+    margin-top: 0;
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-top: 0;
+    }
+  }
+
+  .form-field-error {
+    color: $red;
   }
 }

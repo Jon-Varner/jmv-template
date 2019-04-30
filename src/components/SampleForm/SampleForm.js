@@ -39,7 +39,6 @@ const SampleForm = ({ user, submitForm }) => {
           for (let error of err.inner) {
             if (field.name === error.path) {
               field.errorMessage = error.message;
-              console.log(field.errorMessage);
             }
           }
         }

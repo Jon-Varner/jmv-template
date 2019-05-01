@@ -9,6 +9,11 @@
   text-decoration: none;
   cursor: pointer;
 
+  &:hover {
+    color: transparent;
+    background-color: transparent;
+  }
+
   .menu-hamburger {
     display: block;
     width: 2rem;

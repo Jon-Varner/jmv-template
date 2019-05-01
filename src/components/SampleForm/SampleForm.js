@@ -77,6 +77,7 @@ const SampleForm = ({ user, submitForm }) => {
             name={name}
             id={fieldId}
             type={type}
+            value={inputs[name]}
             label={label}
             required={required}
             errorMessage={errorMessage}

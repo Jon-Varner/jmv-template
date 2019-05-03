@@ -34,19 +34,19 @@ const SampleForm = ({ user, submitForm }) => {
         submitForm(values);
       })
       .catch(err => {
-        const errors = {};
+        const cache = {};
 
         for (let error of err.inner) {
-          errors[error.path] = error.message;
+          cache[error.path] = error.message;
         }
 
         for (let field of fields) {
           field.errorMessage = '';
-          if (errors[field.name] !== undefined) {
-            field.errorMessage = errors[field.name];
+          if (cache[field.name] !== undefined) {
+            field.errorMessage = cache[field.name];
           }
         }
-        setErrors(err.inner);
+        setErrors(cache);
       });
   };
 

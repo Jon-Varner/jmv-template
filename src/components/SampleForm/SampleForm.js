@@ -34,12 +34,16 @@ const SampleForm = ({ user, submitForm }) => {
         submitForm(values);
       })
       .catch(err => {
+        const errors = {};
+
+        for (let error of err.inner) {
+          errors[error.path] = error.message;
+        }
+
         for (let field of fields) {
           field.errorMessage = '';
-          for (let error of err.inner) {
-            if (field.name === error.path) {
-              field.errorMessage = error.message;
-            }
+          if (errors[field.name] !== undefined) {
+            field.errorMessage = errors[field.name];
           }
         }
         setErrors(err.inner);

@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { Switch, Route, withRouter } from 'react-router-dom';
 
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-import Nav from '../../components/Nav/Nav';
-import Home from '../../components/Home/Home';
-import SampleForm from '../../components/SampleForm/SampleForm';
-import SampleApiCall from '../../components/SampleApiCall/SampleApiCall';
-import Error404 from '../../components/Error/Error404';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Nav from '../Nav/Nav';
+import Home from '../Home/Home';
+import { SampleForm } from '../SampleForm/SampleForm';
+import SampleApiCall from '../SampleApiCall/SampleApiCall';
+import Error404 from '../Error/Error404';
 
 import * as actions from '../../store/actions/actions';
 

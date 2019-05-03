@@ -3,15 +3,13 @@ import { ADD_USER } from '../actions/types';
 const initialState = {
   user: {
     id: 0,
-    name: 'Initial User Name',
+    fullName: 'Initial User Name',
     email: 'Initial Email',
     password: 'Initial Password',
-    age: 'Initial Age',
-    prefs: 'None',
-    he: false,
-    she: false,
-    they: false,
-    optin: 'false'
+    age: '30',
+    preference: 'None',
+    pronouns: [],
+    optin: false
   },
   error: null
 };

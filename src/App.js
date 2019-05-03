@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import store from './store/store';
 
-import Layout from './containers/Layout/Layout';
+import Layout from './components/Layout/Layout';
 
 const App = () => (
   <Provider store={store}>

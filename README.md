@@ -10,17 +10,18 @@
   <li>redux, react-redux, redux-thunk, and redux-devtools-extension</li>
   <li>react-router-dom</li>
   <li>axios</li>
+  <li>formik</li>
   <li>yup</li>  
   <li>node-sass</li>
   <li>uuid</li>
   <li>dev dependencies: enzyme, redux-mock-store, and axios-mock-adapter</li>
 </ul>
 
-<p>A typical component folder structure is included, as well as a Layout container and Header, Nav, Footer, SampleForm, and SampleApiCall components. Routing is set up to include a 404 error page.</p>
+<p>A typical component folder structure is included, with Layout, Header, Nav, Footer, SampleForm, and SampleApiCall components. Routing is set up to include a 404 error page.</p>
 
 <p>I set up the redux store with separate action and types files, as well as a rootReducer using combineReducers and simple proof-of-concept actions and reducers.</p>
 
- <p>The Sample Form page includes dynamically generated fields using a single FormField component and validation using yup.</p>
+ <p>The Sample Form page uses formik with yup for validation.</p>
 
 <p>The Sample API Call page demonstrates an asynchronous API call using thunk and axios.</p>
 

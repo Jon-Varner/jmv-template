@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import MenuToggle from '../UI/MenuToggle';
 
-const Nav = ({ menuOpen, toggleMenu }) => (
+const Nav = React.memo(({ menuOpen, toggleMenu }) => (
   <nav className={menuOpen ? 'primary-nav is-open' : 'primary-nav'}>
     <MenuToggle toggleMenu={toggleMenu} />
     <ul>
@@ -25,7 +25,7 @@ const Nav = ({ menuOpen, toggleMenu }) => (
       </li>
     </ul>
   </nav>
-);
+));
 
 Nav.propTypes = {
   menuOpen: PropTypes.bool,

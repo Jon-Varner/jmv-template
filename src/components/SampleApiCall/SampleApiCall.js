@@ -6,7 +6,7 @@ class SampleApiCall extends Component {
     this.props.personFetched();
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps) {
     if (nextProps.person !== this.props.person) {
       return true;
     }

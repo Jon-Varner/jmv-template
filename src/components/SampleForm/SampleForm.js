@@ -52,10 +52,11 @@ export const SampleForm = ({ user, submitForm }) => (
         age: '',
         preference: '',
         pronouns: [],
-        optin: false
+        optin: 'false'
       }}
       validationSchema={SampleSchema}
       onSubmit={values => {
+        console.log(values);
         submitForm(values);
       }}
       render={({ setFieldValue, setFieldTouched, values, errors, touched }) => (
@@ -125,16 +126,28 @@ export const SampleForm = ({ user, submitForm }) => (
           </div>
           <div className="form-field">
             <h2>Opt-in:</h2>
-            <ul>
+            <Field component="ul" name="optin">
               <li>
-                <input type="radio" name="optin" value={true} />
-                <label>Yes</label>
+                <input
+                  type="radio"
+                  id="optedIn"
+                  name="optin"
+                  value="true"
+                  defaultChecked={values.optin === 'true'}
+                />
+                <label htmlFor="optedIn">Yes</label>
               </li>
               <li>
-                <input type="radio" name="optin" value={false} />
-                <label>No</label>
+                <input
+                  type="radio"
+                  id="optedOut"
+                  name="optin"
+                  value="false"
+                  defaultChecked={values.optin === 'false'}
+                />
+                <label htmlFor="optedOut">No</label>
               </li>
-            </ul>
+            </Field>
           </div>
           <button type="submit">Submit</button>
         </Form>

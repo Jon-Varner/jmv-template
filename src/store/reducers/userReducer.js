@@ -9,7 +9,7 @@ const initialState = {
     age: '30',
     preference: 'None',
     pronouns: [],
-    optin: false
+    optin: 'false'
   },
   error: null
 };

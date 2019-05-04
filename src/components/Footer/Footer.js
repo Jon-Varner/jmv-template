@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = () => (
+const Footer = React.memo(props => (
   <footer>
     <ul>
       <li>&copy; copyright info</li>
@@ -10,6 +10,6 @@ const Footer = () => (
       <li>More contact info</li>
     </ul>
   </footer>
-);
+));
 
 export default Footer;

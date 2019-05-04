@@ -13,6 +13,8 @@ const Home = () => (
       <li>redux-thunk</li>
       <li>redux-devtools-extension</li>
       <li>axios</li>
+      <li>formik</li>
+      <li>yup</li>
       <li>uuid</li>
       <li>node-sass</li>
     </ul>

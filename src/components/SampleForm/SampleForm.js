@@ -24,7 +24,6 @@ const colorOptions = ['Red', 'Green', 'Blue', 'Yellow'];
 
 const pronounOptions = ['he/him', 'she/her', 'they/them'];
 
-<<<<<<< HEAD
 export const SampleForm = ({ user, submitForm }) => (
   <Fragment>
     <h2>Current User Info:</h2>
@@ -36,36 +35,6 @@ export const SampleForm = ({ user, submitForm }) => (
         } else {
           val = user[key].toString();
         }
-=======
-  const handleSubmit = event => {
-    event.preventDefault();
-
-    /* Validation */
-    validationSchema
-      .validate(inputs, { abortEarly: false })
-      .then(values => {
-        for (let field of fields) {
-          field.errorMessage = '';
-        }
-        submitForm(values);
-      })
-      .catch(err => {
-        const cache = {};
-
-        for (let error of err.inner) {
-          cache[error.path] = error.message;
-        }
-
-        for (let field of fields) {
-          field.errorMessage = '';
-          if (cache[field.name] !== undefined) {
-            field.errorMessage = cache[field.name];
-          }
-        }
-        setErrors(cache);
-      });
-  };
->>>>>>> 6b2e7858e757fe97bd644fcd645353669eb4e65d
 
         return (
           <li key={key}>

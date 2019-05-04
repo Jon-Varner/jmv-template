@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
 
-const Checkbox = React.memo(props => (
+const Checkbox = props => (
   <Field name={props.name}>
     {({ field, form }) => (
       <Fragment>
@@ -26,7 +26,7 @@ const Checkbox = React.memo(props => (
       </Fragment>
     )}
   </Field>
-));
+);
 
 Checkbox.propTypes = {
   id: PropTypes.string,

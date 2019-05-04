@@ -51,7 +51,7 @@ export const SampleForm = ({ user, submitForm }) => (
         password: '',
         age: '',
         preference: '',
-        pronouns: [],
+        pronouns: ['they/them'],
         optin: 'false'
       }}
       validationSchema={SampleSchema}

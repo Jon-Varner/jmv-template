@@ -132,7 +132,9 @@ export const SampleForm = ({ user, submitForm }) => (
             errors={errors}
             touched={touched}
           />
-          <button type="submit">Submit</button>
+          <button type="submit" className="formSubmit">
+            Submit
+          </button>
         </Form>
       )}
     />

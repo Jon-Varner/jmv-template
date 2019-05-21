@@ -2,7 +2,6 @@ import { ADD_USER } from '../actions/types';
 
 const initialState = {
   user: {
-    id: 0,
     fullName: 'Initial User Name',
     email: 'Initial Email',
     password: 'Initial Password',

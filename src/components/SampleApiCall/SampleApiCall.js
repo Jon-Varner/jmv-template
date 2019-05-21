@@ -20,7 +20,7 @@ class SampleApiCall extends Component {
 
     return (
       <p className="api-result">
-        API returned person ID: {id} and Name: {name}.
+        API returned Person ID: {id} and Name: {name}.
       </p>
     );
   }

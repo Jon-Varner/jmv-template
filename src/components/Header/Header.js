@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Header = React.memo(props => (
+const Header = React.memo(({ title }) => (
   <header>
-    <h1>Custom React template</h1>
+    <h1>{title}</h1>
   </header>
 ));
 

@@ -34,7 +34,7 @@ const Layout = ({
 
   return (
     <Fragment>
-      <Header />
+      <Header title="Custom React template" />
       <Nav menuOpen={menuOpen} toggleMenu={onMenuToggled} />
       <main>
         <Switch>

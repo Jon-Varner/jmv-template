@@ -70,7 +70,7 @@ export const SampleForm = ({ user, submitForm }) => (
             id="fullName"
             name="fullName"
             label="Name:"
-            placeholder="Enter your name"
+            placeholder="Enter your full name"
             required={true}
             errors={errors}
             touched={touched}

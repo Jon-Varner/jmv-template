@@ -14,7 +14,7 @@
   <li>yup</li>  
   <li>node-sass</li>
   <li>uuid</li>
-  <li>dev dependencies: enzyme, redux-mock-store, and axios-mock-adapter</li>
+  <li>dev dependencies: react-testing-library, react-test-renderer, enzyme, enzyme-adapter-react-16, jest-dom, redux-mock-store, and axios-mock-adapter</li>
 </ul>
 
 <p>A typical component folder structure is included, with Layout, Header, Nav, Footer, SampleForm, and SampleApiCall components. Routing is set up to include a 404 error page.</p>

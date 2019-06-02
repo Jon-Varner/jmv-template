@@ -14,7 +14,7 @@ export const fetchPerson = () => {
   return dispatch => {
     dispatch(fetchPersonBegin());
 
-    axios
+    return axios
       .get('https://jsonplaceholder.typicode.com/users/1')
       .then(response => {
         dispatch(
@@ -34,9 +34,9 @@ const fetchPersonBegin = () => ({
   type: actionTypes.FETCH_PERSON_BEGIN
 });
 
-const fetchPersonSuccess = user => ({
+const fetchPersonSuccess = person => ({
   type: actionTypes.FETCH_PERSON_SUCCESS,
-  payload: { ...user }
+  payload: { ...person }
 });
 
 const fetchPersonFailure = error => ({

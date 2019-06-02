@@ -12,54 +12,52 @@ import Error404 from '../Error/Error404';
 
 import * as actions from '../../store/actions/actions';
 
-const Layout = ({
-  menuOpen,
-  person,
-  user,
-  toggleMenu,
-  fetchPerson,
-  addUser
-}) => {
-  const onFormSubmitted = data => {
-    addUser(data);
-  };
+const Layout = React.memo(
+  ({ menuOpen, person, user, toggleMenu, fetchPerson, addUser }) => {
+    const onFormSubmitted = data => {
+      addUser(data);
+    };
 
-  const onPersonFetched = () => {
-    fetchPerson();
-  };
+    const onPersonFetched = () => {
+      fetchPerson();
+    };
 
-  const onMenuToggled = () => {
-    toggleMenu();
-  };
+    const onMenuToggled = () => {
+      toggleMenu();
+    };
 
-  return (
-    <Fragment>
-      <Header title="Custom React template" />
-      <Nav menuOpen={menuOpen} toggleMenu={onMenuToggled} />
-      <main>
-        <Switch>
-          <Route
-            exact
-            path="/sample-form"
-            render={() => (
-              <SampleForm user={user} submitForm={onFormSubmitted} />
-            )}
-          />
-          <Route
-            exact
-            path="/sample-api-call"
-            render={() => (
-              <SampleApiCall person={person} personFetched={onPersonFetched} />
-            )}
-          />
-          <Route exact path="/" component={Home} />
-          <Route component={Error404} />
-        </Switch>
-      </main>
-      <Footer />
-    </Fragment>
-  );
-};
+    return (
+      <Fragment>
+        <Header title="Custom React template" />
+        <Nav menuOpen={menuOpen} toggleMenu={onMenuToggled} />
+        <main>
+          <Switch>
+            <Route
+              exact
+              path="/sample-form"
+              render={() => (
+                <SampleForm user={user} submitForm={onFormSubmitted} />
+              )}
+            />
+            <Route
+              exact
+              path="/sample-api-call"
+              render={() => (
+                <SampleApiCall
+                  person={person}
+                  personFetched={onPersonFetched}
+                />
+              )}
+            />
+            <Route exact path="/" component={Home} />
+            <Route component={Error404} />
+          </Switch>
+        </main>
+        <Footer />
+      </Fragment>
+    );
+  }
+);
 
 const mapStateToProps = state => {
   return {

@@ -1,5 +1,10 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from 'react-testing-library';
+import {
+  render,
+  cleanup,
+  fireEvent,
+  waitForElement
+} from 'react-testing-library';
 import 'jest-dom/extend-expect';
 
 import { SampleForm } from './SampleForm';
@@ -35,7 +40,9 @@ describe('form tests', () => {
 
     fireEvent.blur(input);
 
-    const inputError = await findByText('Please enter your name.');
+    const inputError = await waitForElement(() =>
+      findByText('Please enter your name.')
+    );
     expect(inputError).toBeInTheDocument();
   });
 
@@ -52,7 +59,9 @@ describe('form tests', () => {
 
     fireEvent.blur(input);
 
-    const inputError = await findByText('Please enter a valid email address.');
+    const inputError = await waitForElement(() =>
+      findByText('Please enter a valid email address.')
+    );
     expect(inputError).toBeInTheDocument();
   });
 
@@ -65,7 +74,9 @@ describe('form tests', () => {
 
     fireEvent.blur(input);
 
-    const inputError = await findByText('Please enter a password.');
+    const inputError = await waitForElement(() =>
+      findByText('Please enter a password.')
+    );
     expect(inputError).toBeInTheDocument();
   });
 
@@ -82,8 +93,8 @@ describe('form tests', () => {
 
     fireEvent.blur(input);
 
-    const inputError = await findByText(
-      'Password must be at least 8 characters.'
+    const inputError = await waitForElement(() =>
+      findByText('Password must be at least 8 characters.')
     );
     expect(inputError).toBeInTheDocument();
   });
@@ -97,7 +108,9 @@ describe('form tests', () => {
 
     fireEvent.blur(input);
 
-    const inputError = await findByText('Please enter your age.');
+    const inputError = await waitForElement(() =>
+      findByText('Please enter your age.')
+    );
     expect(inputError).toBeInTheDocument();
   });
 
@@ -114,7 +127,9 @@ describe('form tests', () => {
 
     fireEvent.blur(input);
 
-    const inputError = await findByText('Please enter a valid age.');
+    const inputError = await waitForElement(() =>
+      findByText('Please enter a valid age.')
+    );
     expect(inputError).toBeInTheDocument();
   });
 
@@ -131,7 +146,9 @@ describe('form tests', () => {
 
     fireEvent.blur(input);
 
-    const inputError = await findByText('Age must be at least 12.');
+    const inputError = await waitForElement(() =>
+      findByText('Age must be at least 12.')
+    );
     expect(inputError).toBeInTheDocument();
   });
 });

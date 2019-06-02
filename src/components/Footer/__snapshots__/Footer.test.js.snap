@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <footer>
+    <ul>
+      <li>
+        © copyright info
+      </li>
+    </ul>
+    <ul>
+      <li>
+        Contact info
+      </li>
+      <li>
+        More contact info
+      </li>
+    </ul>
+  </footer>
+</DocumentFragment>
+`;

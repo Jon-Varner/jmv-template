@@ -9,8 +9,7 @@ const initialState = {
     preference: 'None',
     pronouns: [],
     optin: 'false'
-  },
-  error: null
+  }
 };
 
 const reducer = (state = initialState, action) => {

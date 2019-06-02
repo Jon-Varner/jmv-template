@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <nav
+    class="primary-nav"
+  >
+    <button
+      aria-label="Open the menu"
+      class="menu-toggle"
+    >
+      <span
+        aria-hidden="true"
+        class="menu-hamburger"
+      />
+      <span
+        aria-hidden="true"
+        class="menu-hamburger"
+      />
+      <span
+        aria-hidden="true"
+        class="menu-hamburger"
+      />
+    </button>
+    <ul>
+      <li>
+        <a
+          aria-current="page"
+          class="active"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/sample-form"
+        >
+          Sample Form
+        </a>
+      </li>
+      <li>
+        <a
+          href="/sample-api-call"
+        >
+          Sample API Call
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

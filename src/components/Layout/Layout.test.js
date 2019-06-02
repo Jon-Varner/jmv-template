@@ -1,6 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router';
-import { MemoryRouter, Link, Route, Switch } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { render, cleanup } from 'react-testing-library';
 import 'jest-dom/extend-expect';

@@ -10,8 +10,9 @@ const Home = () => (
       <li>react-router-dom</li>
       <li>react-redux</li>
       <li>redux</li>
-      <li>redux-thunk</li>
       <li>redux-devtools-extension</li>
+      <li>redux-saga</li>
+      <li>redux-saga-devtools</li>
       <li>axios</li>
       <li>formik</li>
       <li>yup</li>

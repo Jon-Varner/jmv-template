@@ -53,7 +53,9 @@ describe('sample API call reducer', () => {
   it('updates loading state and error state when fetch person fails', () => {
     const fetchPerson = {
       type: types.FETCH_PERSON_FAILURE,
-      payload: { error: 'message' }
+      payload: {
+        message: 'Request failed with status code 404'
+      }
     };
 
     expect(reducer(initialState, fetchPerson)).toEqual({
@@ -62,7 +64,7 @@ describe('sample API call reducer', () => {
         name: 'Initial Person Name'
       },
       loading: false,
-      error: 'message'
+      error: 'Request failed with status code 404'
     });
   });
 });

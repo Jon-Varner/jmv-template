@@ -13,7 +13,8 @@
     "react-scripts": "3.0.0",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0",
+    "redux-saga": "^1.0.2",
+    "redux-saga-devtools": "^0.3.0",
     "uuid": "^3.3.2",
     "yup": "^0.27.0"
   },
@@ -34,12 +35,13 @@
   ],
   "devDependencies": {
     "@testing-library/react": "^8.0.1",
-    "axios-mock-adapter": "^1.16.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "jest-dom": "^3.4.0",
+    "moxios": "^0.4.0",
     "react-test-renderer": "^16.8.6",
     "react-testing-library": "^6.1.2",
-    "redux-mock-store": "^1.5.3"
+    "redux-mock-store": "^1.5.3",
+    "redux-saga-test-plan": "^4.0.0-beta.3"
   }
 }

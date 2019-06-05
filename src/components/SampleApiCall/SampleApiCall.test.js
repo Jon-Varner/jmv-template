@@ -10,14 +10,14 @@ const personFetched = jest.fn().mockResolvedValue({ person: {} });
 
 it('renders', () => {
   const { asFragment } = render(
-    <SampleApiCall person={person} personFetched={personFetched} />
+    <SampleApiCall person={person} fetchPerson={personFetched} />
   );
   expect(asFragment()).toMatchSnapshot();
 });
 
 it('displays default ID and name', async () => {
   const { getByText } = render(
-    <SampleApiCall person={person} personFetched={personFetched} />
+    <SampleApiCall person={person} fetchPerson={personFetched} />
   );
 
   expect(

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import * as actionTypes from './types';
 
 export const toggleMenu = () => ({
@@ -10,36 +9,18 @@ export const addUser = payload => ({
   payload: payload
 });
 
-export const fetchPerson = () => {
-  return dispatch => {
-    dispatch(fetchPersonBegin());
-
-    return axios
-      .get('https://jsonplaceholder.typicode.com/users/1')
-      .then(response => {
-        dispatch(
-          fetchPersonSuccess({
-            id: response.data.id,
-            name: response.data.username
-          })
-        );
-      })
-      .catch(error => {
-        dispatch(fetchPersonFailure(error.message));
-      });
+export const fetchPersonBegin = () => {
+  return {
+    type: actionTypes.FETCH_PERSON_BEGIN
   };
 };
 
-const fetchPersonBegin = () => ({
-  type: actionTypes.FETCH_PERSON_BEGIN
-});
-
-const fetchPersonSuccess = person => ({
+export const fetchPersonSuccess = person => ({
   type: actionTypes.FETCH_PERSON_SUCCESS,
   payload: { ...person }
 });
 
-const fetchPersonFailure = error => ({
+export const fetchPersonFailure = message => ({
   type: actionTypes.FETCH_PERSON_FAILURE,
-  payload: { error }
+  payload: message
 });

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class SampleApiCall extends Component {
   componentDidMount() {
-    this.props.personFetched();
+    this.props.fetchPerson();
   }
 
   shouldComponentUpdate(nextProps) {
@@ -28,7 +28,7 @@ class SampleApiCall extends Component {
 
 SampleApiCall.propTypes = {
   person: PropTypes.object,
-  personFetched: PropTypes.func.isRequired
+  fetchPerson: PropTypes.func.isRequired
 };
 
 export default SampleApiCall;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -18,7 +18,7 @@ const App = ({ menuOpen, person, user, toggleMenu, fetchPerson, addUser }) => {
   };
 
   return (
-    <BrowserRouter>
+    <Fragment>
       <Header title="Custom React template" />
       <Nav menuOpen={menuOpen} toggleMenu={toggleMenu} />
       <main>
@@ -40,7 +40,7 @@ const App = ({ menuOpen, person, user, toggleMenu, fetchPerson, addUser }) => {
         </Switch>
       </main>
       <Footer />
-    </BrowserRouter>
+    </Fragment>
   );
 };
 
@@ -63,4 +63,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App);
+)(withRouter(App));

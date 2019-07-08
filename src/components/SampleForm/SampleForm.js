@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
@@ -29,117 +29,132 @@ const optinOptions = [
   { id: 'optedOut', label: 'no', value: 'false' }
 ];
 
-export const SampleForm = ({ user, submitForm }) => (
-  <Fragment>
-    <h2>Current User Info:</h2>
-    <ul className="returned-sample-state">
-      {Object.keys(user).map(key => {
-        let val = '';
-        if (Array.isArray(user[key])) {
-          val = user[key].join(', ');
-        } else {
-          val = user[key].toString();
-        }
+export const SampleForm = ({ user, submitForm }) => {
+  const focusedInput = useRef(null);
 
-        return (
-          <li key={key}>
-            {key}: {val}
-          </li>
-        );
-      })}
-    </ul>
+  useEffect(() => {
+    focusedInput.current.focus();
+  }, [focusedInput]);
 
-    <Formik
-      initialValues={{
-        fullName: '',
-        email: '',
-        password: '',
-        age: '',
-        preference: '',
-        pronouns: ['they/them'],
-        optin: 'false'
-      }}
-      validationSchema={SampleSchema}
-      onSubmit={values => {
-        submitForm(values);
-      }}
-      render={({ setFieldValue, setFieldTouched, values, errors, touched }) => (
-        <Form>
-          <TextField
-            type="text"
-            id="fullName"
-            name="fullName"
-            label="Name:"
-            placeholder="Enter your full name"
-            required={true}
-            errors={errors}
-            touched={touched}
-          />
-          <TextField
-            type="text"
-            id="email"
-            name="email"
-            label="Email:"
-            placeholder="Enter your email address"
-            required={false}
-            errors={errors}
-            touched={touched}
-          />
-          <TextField
-            type="password"
-            id="password"
-            name="password"
-            label="Password:"
-            placeholder="Enter your password"
-            required={true}
-            errors={errors}
-            touched={touched}
-          />
-          <TextField
-            type="number"
-            id="age"
-            name="age"
-            label="Age:"
-            placeholder="Enter your age"
-            required={true}
-            errors={errors}
-            touched={touched}
-          />
-          <Select
-            id="preference"
-            name="preference"
-            label="Color Preference:"
-            placeholder="Select your preferred color"
-            required={false}
-            options={colorOptions}
-            errors={errors}
-            touched={touched}
-          />
-          <CheckboxGroup
-            name="pronouns"
-            label="Pronouns:"
-            required={false}
-            options={pronounOptions}
-            errors={errors}
-            touched={touched}
-          />
-          <RadioButtonGroup
-            name="optin"
-            label="Opt-in:"
-            required={false}
-            options={optinOptions}
-            defaultValue={values.optin}
-            errors={errors}
-            touched={touched}
-          />
-          <button type="submit" className="formSubmit">
-            Submit
-          </button>
-        </Form>
-      )}
-    />
-  </Fragment>
-);
+  return (
+    <Fragment>
+      <h2>Current User Info:</h2>
+      <ul className="returned-sample-state">
+        {Object.keys(user).map(key => {
+          let val = '';
+          if (Array.isArray(user[key])) {
+            val = user[key].join(', ');
+          } else {
+            val = user[key].toString();
+          }
+
+          return (
+            <li key={key}>
+              {key}: {val}
+            </li>
+          );
+        })}
+      </ul>
+
+      <Formik
+        initialValues={{
+          fullName: '',
+          email: '',
+          password: '',
+          age: '',
+          preference: '',
+          pronouns: ['they/them'],
+          optin: 'false'
+        }}
+        validationSchema={SampleSchema}
+        onSubmit={values => {
+          submitForm(values);
+        }}
+        render={({
+          setFieldValue,
+          setFieldTouched,
+          values,
+          errors,
+          touched
+        }) => (
+          <Form>
+            <TextField
+              type="text"
+              id="fullName"
+              name="fullName"
+              label="Name:"
+              placeholder="Enter your full name"
+              required={true}
+              errors={errors}
+              touched={touched}
+              ref={focusedInput}
+            />
+            <TextField
+              type="text"
+              id="email"
+              name="email"
+              label="Email:"
+              placeholder="Enter your email address"
+              required={false}
+              errors={errors}
+              touched={touched}
+            />
+            <TextField
+              type="password"
+              id="password"
+              name="password"
+              label="Password:"
+              placeholder="Enter your password"
+              required={true}
+              errors={errors}
+              touched={touched}
+            />
+            <TextField
+              type="number"
+              id="age"
+              name="age"
+              label="Age:"
+              placeholder="Enter your age"
+              required={true}
+              errors={errors}
+              touched={touched}
+            />
+            <Select
+              id="preference"
+              name="preference"
+              label="Color Preference:"
+              placeholder="Select your preferred color"
+              required={false}
+              options={colorOptions}
+              errors={errors}
+              touched={touched}
+            />
+            <CheckboxGroup
+              name="pronouns"
+              label="Pronouns:"
+              required={false}
+              options={pronounOptions}
+              errors={errors}
+              touched={touched}
+            />
+            <RadioButtonGroup
+              name="optin"
+              label="Opt-in:"
+              required={false}
+              options={optinOptions}
+              defaultValue={values.optin}
+              errors={errors}
+              touched={touched}
+            />
+            <button type="submit" className="formSubmit">
+              Submit
+            </button>
+          </Form>
+        )}
+      />
+    </Fragment>
+  );
+};
 
 SampleForm.propTypes = {
   user: PropTypes.object,
